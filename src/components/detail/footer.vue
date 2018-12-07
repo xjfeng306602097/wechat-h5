@@ -81,7 +81,7 @@ export default {
 
 .footer {
   width: 100%;
-  display: -webkit-flex;
+  /*display: -webkit-flex;*/
   display: -ms-flex;
   display: flex;
   height: 14vw;
@@ -156,6 +156,7 @@ export default {
     color: #fff;
     background-color: #FF4500;
     letter-spacing: 0.2vw;
+    border-top-width: 0;
     &:active {
       background-color: #FF4500;
     }

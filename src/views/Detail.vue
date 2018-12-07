@@ -4,7 +4,7 @@
     <v-chose/>
     <v-content/>
     <v-baseline/>
-    <v-footer/>>
+    <v-footer/>
   </div>
 </template>
 
@@ -25,7 +25,6 @@ export default {
   },
 
   beforeCreate(){
-    debugger
     this.$store.dispatch('setDatas');
   }
 }

@@ -12,8 +12,8 @@
       <li><i class="icon-99"></i><span>9.9包邮</span></li>
     </ul>
     <ul>
-      <li style="width:20%"><img src="../../assets/index/images/youhui.jpg" class="icon-99"/></li>
-      <li style="width:20%"><img src="../../assets/index/images/juhuasuan.jpg" class="icon-99"/></li>
+      <li style="width:20%"><img src="../../assets/index/images/category.jpg" class="icon-99"/></li>
+      <li style="width:20%"><img src="../../assets/index/images/pingtuan.jpg" class="icon-99"/></li>
       <li style="width:20%"><img src="../../assets/index/images/baoyou.jpg" class="icon-99"/></li>
     </ul>
     <ul>

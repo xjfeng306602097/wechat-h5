@@ -9,6 +9,13 @@
       <h1 class="chose-view-title">
         {{view.title}}
       </h1>
+      <div>
+
+      </div>
+    </div>
+    <div>
+      <span style="float:left" class="font-grey">已售{{view.sold_count}}</span>
+      <span style="float:right;width:30%;text-align:center" class="font-red-s"><p style="background: #FFB6C1">预估佣金¥{{view.payout}}</p></span>
     </div>
   <!-- 添加空函数 解决Safari浏览器 :active无效 -->
     <!--<div class="chose-mychosed" ontouchstart="">-->
