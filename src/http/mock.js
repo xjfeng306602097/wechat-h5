@@ -68,6 +68,7 @@ var detail = Mock.mock('http://api.com/detail', {
     ],
     'intro':  Random.cparagraph(2),
     'id':'@id',
+    'product_id': 567863245127,
     'sold_count': 42551,
     'payout': 33.45,
     'final_price' : 66.6,

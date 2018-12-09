@@ -9,8 +9,8 @@ import Mint from 'mint-ui';    //移动端UI
 import 'mint-ui/lib/style.css'
 Vue.use(Mint);
 Vue.config.productionTip = false
-Vue.prototype.$api = api;
-
+Vue.prototype.$api = api.api;
+Vue.prototype.$apix = api.apix;
 
 // 用钩子函数beforeEach()对路由进行判断
 

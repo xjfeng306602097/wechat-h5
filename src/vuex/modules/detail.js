@@ -4,6 +4,7 @@ import Vue from 'vue'
 
 // 容器
 const state = {
+  baesUrl : '/h5/mtop.taobao.detail.getdesc/6.0/?data={%22id%22:%22[id]%22}',
   productDatas:'',  //detail父组件请求的当前页面商品数据
   colSelected:0,   //0是index,表示第一个
   sizeSelected:0,  //0是index,表示第一个
@@ -12,6 +13,7 @@ const state = {
   fetchLoading:false,     //全局加载状态的Loading
   selectedList:'',         //已选择的购物车商品列表
   unSelectedList:'',      //未选择的购物车商品列表,提交订单后用它替换carList
+  imagesContent:'',       //图片链接
 }
 
 //更改 store 中的状态的唯一方法:提交 mutation
@@ -25,10 +27,9 @@ const state = {
 */
 const mutations = {
 
-
 //异步请求的数据
   [types.SET_DATAS](state,res) {
-    state.productDatas = res
+    state.productDatas = res;
   },
 
   //详情页商品颜色的选择
@@ -62,6 +63,10 @@ const mutations = {
     state.count = Util.getLocal('carList').length
   },
 
+  [types.SET_IMAGE] (state, res) {
+    state.imagesContent = res.data.pcDescContent;
+  },
+
 // loading开关
   [types.SET_LOADING] (state,res) {
     state.fetchLoading = res
@@ -91,7 +96,14 @@ const actions = {
         url:"/detail"
       }).then(response=>{
         commit('SET_DATAS',response.data);
-      })
+        debugger
+        vm.$apix({
+          method:'get',
+          url:state.baesUrl.replace('[id]', state.productDatas.view.product_id)
+        }).then(response=>{
+          commit('SET_IMAGE',response.data);
+        });
+      });
   },
 
 // 购物车数量增减,true是加,false是减

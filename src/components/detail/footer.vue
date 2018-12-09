@@ -3,12 +3,12 @@
     <router-link :to="{name:'首页'}" class="footer-index">
       <i class="icon-index"></i>
     </router-link>
-    <router-link  :to="{name:'购物车页'}" class="footer-gocar">
+    <router-link :to="{name:'购物车页'}" class="footer-gocar">
       <i class="icon-car"></i>
       <span v-if="count">{{count}}</span>
     </router-link>
     <span class="footer-addcar" @click="addIntoCar">
-      领卷¥{{productDatasView.price-productDatasView.final_price}}
+      领卷¥{{discount}}
     </span>
   </footer>
 </template>
@@ -26,8 +26,15 @@ export default {
       }
       return this.$store.state.detail.count
     },
-    productDatasView () {
-      return this.$store.state.detail.productDatas.view
+    productDatasView() {
+      return this.$store.state.detail.productDatas.view;
+    },
+    discount () {
+      if (this.$store.state.detail.productDatas.view != null && typeof this.$store.state.detail.productDatas.view != 'undefined') {
+        return this.$store.state.detail.productDatas.view.price-this.$store.state.detail.productDatas.view.final_price;
+      } else {
+        return '';
+      }
     },
     colSelected () {
       return this.$store.state.detail.colSelected

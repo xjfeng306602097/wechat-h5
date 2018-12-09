@@ -45,3 +45,6 @@ export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 
 // 分类页的aside index
 export const CHANGE_TABINDEX = 'CHANGE_TABINDEX'
+
+// 设置商详情图片
+export const SET_IMAGE = 'SET_IMAGE'

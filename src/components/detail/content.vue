@@ -1,7 +1,9 @@
 <template lang="html">
   <section class="content">
-    <div class="img-wrap" v-for="k in content">
+    <!--<div class="img-wrap" v-for="k in content">
       <img :src="k.imgSrc">
+    </div>-->
+    <div v-if="content != ''" class="img-wrap" v-html="content">
     </div>
   </section>
 
@@ -11,7 +13,8 @@
 export default {
   computed:{
     content(){
-      return this.$store.state.detail.productDatas.contentImgSrc
+      debugger
+      return this.$store.state.detail.imagesContent.replace(/\<img/gi, '<img style="width:100%;height:auto"');
     }
   }
 }
@@ -23,12 +26,13 @@ export default {
     margin-top: 10px;
     border-top: 20px solid #F8FCFF;
     .img-wrap {
-    height: 120vw;
+      min-width: 320px;
+      max-width: 640px;
+      overflow: hidden;
 
       img {
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
       }
     }
   }
